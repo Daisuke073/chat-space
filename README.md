@@ -47,6 +47,6 @@
 |group_id|integer|null: false, foreign_key: true|
 |message_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
-- belongs_to :message
+- has_many :groups
+- has_many :messages
 
