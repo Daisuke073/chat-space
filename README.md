@@ -10,7 +10,6 @@
 |username|string|null: false|
 ### Association
 - has_many :groups
-- 
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -49,4 +48,3 @@
 ### Association
 - has_many :groups
 - has_many :messages
-
