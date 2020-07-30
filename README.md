@@ -1,6 +1,7 @@
 # README
 
 # Qiita DB設計
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -8,45 +9,47 @@
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :posts
-- has_many :comments
+- has_many :groups
+- 
 
-## postsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
+|groupname|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+- 
+- 
+- 
 
-## tagsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
+|body|text|null: false|
+|image|string|
+|group_id|integer|
+|user_id|integer|
 
-## posts_tagsテーブル
+### Association
+- has_many
+- 
+
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
-- belongs_to :tag
+- belongs_to :user
+- belongs_to :group
 
-## commentsテーブル
+## groups_messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
-- belongs_to :user
-このカリキュラムの
+- belongs_to :group
+- belongs_to :message
