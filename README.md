@@ -1,6 +1,6 @@
 # README
 
-# Qiita DB設計
+# Chat-space DB設計
 
 ## usersテーブル
 |Column|Type|Options|
@@ -19,21 +19,18 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- 
-- 
-- 
+- has_many :groups_messages
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
 |image|string|
-|group_id|integer|
-|user_id|integer|
+|group_id|integer|null: false|
+|user_id|integer|null: false|
 
 ### Association
-- has_many
-- 
+- has_many :messages_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
@@ -47,9 +44,9 @@
 ## groups_messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :message
+
