@@ -5,9 +5,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false add_index :users, name|
-|email|string|null: false add_index :users, email|
-|password|string|null: false add_index :users, password|
+|name|string|null:false, add_index :users, name|
+|email|string|null: false, add_index :users, email|
+|password|string|null: false, add_index :users, password|
 
 ### Association
 - has_many :users_groups
@@ -27,12 +27,12 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|group_id|integer|null: false|
-|user_id|integer|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :groups
+- belongs_to :users
 
 ## users_groupsテーブル
 |Column|Type|Options|
