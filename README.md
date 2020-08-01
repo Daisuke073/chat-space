@@ -5,9 +5,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false|add_index|
-|email|string|null: false|add_index|
-|password|string|null: false|add_index|
+|name|string|null:false add_index|
+|email|string|null: false add_index|
+|password|string|null: false add_index|
 
 ### Association
 - has_many :users_groups
