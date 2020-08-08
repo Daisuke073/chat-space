@@ -5,22 +5,24 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false, add_index :users, name|
-|email|string|null: false, add_index :users, email|
-|password|string|null: false, add_index :users, password|
+|name|string|null:false, index: true|
+|email|string|null: false, index: true|
+|password|string|null: false, index: true|
 
 ### Association
 - has_many :users_groups
-- has_many :groups through: :users_groups
+- has_many :groups, through: :users_groups
+- has_many :messages
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|add_index :groups, name|
+|name|string|null: false, index: true, unique: true|
 
 ### Association
 - has_many :users_groups
-- has_many :users through: :users_groups
+- has_many :users, through: :users_groups
+- has_many :messages
 
 ## messagesテーブル
 |Column|Type|Options|
