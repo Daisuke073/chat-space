@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.SideBer {
+  width: 300px;
+  color: #ffffff;
+}
+.Header {
+  background-color: #253141;
+  height: 100px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+}
+.HeaderList {
+  height: 20px;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  &__userName {
+    font-size: 16px;
+  }
+  &__iconlist {
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.icon {
+  margin-left: 5px;
+  color: #ffff;
+}
+
+.Group {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+}
+.GroupList {
+  padding: 20px 0 40px 0;
+  &__name {
+    font-size: 15px;
+  }
+  &__message {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
+
+.ChatMain {
+  width: calc(100vw - 300px);
+}
+.ChatHeader {
+  background-color: #ffffff;
+  height: 100px;
+  padding: 0 40px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  &__group {
+    color: #333333;
+    font-size: 20px;
+    padding-top: 35px;
+  }
+  &__groupname {
+    font-size: 12px;
+    color: #999999;
+    padding-top: 15px;
+    display: flex;
+  }
+  &__edit{
+    color: #38aef0;
+    font-size: 16px;
+    border: 1px solid #38aef0;
+    height: 40px;
+    width: 72px;
+    margin-top: 28px;
+    padding: 0 20px;
+    line-height: 40px;
+  }
+  &__editbtn {
+    color: #38aef0;
+    text-decoration: none;
+  }
+}
+.ChatMessage {
+  background-color: #fafafa;
+  height: calc(100vh - 100px - 90px);
+  padding: 35px 40px;
+}
+.MessageBox {
+  margin-bottom: 46px;
+}
+.MessageInfo {
+  display: flex;
+  &__name {
+    color: #333333;
+    font-size: 16px;
+  }
+  &__postTime {
+    color: #999999;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}
+.Message {
+  margin-top: 12px;
+  &__content {
+    color: #434A54;
+    font-size: 14px;  
+  }
+}
+.Form {
+  background-color:#d2d2d2;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+}
+.ChatForm {
+  display: flex;
+  justify-content: space-between;
+  &__content {
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+  }
+  &__input {
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding: 0 45px 0 15px;
+  }
+  &__inputImage {
+    height: 50px;
+    position: absolute;
+    right: 10px;
+  }
+  .icon-image {
+    line-height: 50px;
+    font-size: 25px;
+  }
+  .Image {
+    display: none;
+  }
+  &__submit {
+    background-color: #38aef0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}
