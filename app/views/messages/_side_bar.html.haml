@@ -2,13 +2,13 @@
   .Header
     .HeaderList
       %h3.HeaderList__userName
-        tanaka
+        = current_user.name
       %ul.HeaderList__iconlist
         %li.HeaderList__icon
           = link_to "#", class: "icon" do
             = icon('far', 'edit')
         %li.HeaderList__icon
-          = link_to "#", class: "icon" do
+          = link_to edit_user_path(current_user), class: "icon" do
             = icon('fas', 'cog')
   .Group
     .GroupList
