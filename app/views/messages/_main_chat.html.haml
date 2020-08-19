@@ -28,13 +28,12 @@
         %p.Message__content
           おはよう！
   .Form
-    %form.ChatForm
+    = form_with model: [@group, @message], html: {class: "ChatForm"}, local: true do |f|
       .ChatForm__content
-        %input.ChatForm__input{type: "text", placeholder: 'type a message'}
-        %label.ChatForm__inputImage
+        = f.text_field :content, class: 'ChatForm__input', placeholder: 'type a message'
+        = f.label :image, class: 'ChatForm__inputImage' do
           = icon('far', 'image', class: 'icon-image')
-          %input.Image{type: 'file'}
-      %input.ChatForm__submit{type: 'submit', value: 'Send'}
-    
+          = = f.file_field :image, class: 'Image'
+      = f.submit 'SEND', class: 'ChatForm__submit'
 
 
