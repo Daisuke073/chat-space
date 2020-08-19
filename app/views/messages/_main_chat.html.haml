@@ -8,32 +8,17 @@
           ユーザー名
     .ChatHeader__edit
       = link_to 'Edit', "#", class: "ChatHeader__editbtn"
-  .ChatMessage
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__name
-          masa
-        .MessageInfo__postTime
-          2020/08/12
-      .Message
-        %p.Message__content
-          おはよう！
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__name
-          masa
-        .MessageInfo__postTime
-          2020/08/12
-      .Message
-        %p.Message__content
-          おはよう！
+
+  .MessageField
+    = render @messages
+
   .Form
     = form_with model: [@group, @message], html: {class: "ChatForm"}, local: true do |f|
       .ChatForm__content
         = f.text_field :content, class: 'ChatForm__input', placeholder: 'type a message'
         = f.label :image, class: 'ChatForm__inputImage' do
           = icon('far', 'image', class: 'icon-image')
-          = = f.file_field :image, class: 'Image'
+          = f.file_field :image, class: 'Image'
       = f.submit 'SEND', class: 'ChatForm__submit'
 
 
