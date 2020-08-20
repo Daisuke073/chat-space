@@ -1,40 +1,24 @@
 .ChatMain
   .ChatHeader
     .ChatHeader__group
-      test
+      = @group.name
       %ul.ChatHeader__groupname
         Member :
         %li.ChatHeader__menbername
-          ユーザー名
+        - @group.users.each do |user|
+          = user.name
     .ChatHeader__edit
-      = link_to 'Edit', "#", class: "ChatHeader__editbtn"
-  .ChatMessage
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__name
-          masa
-        .MessageInfo__postTime
-          2020/08/12
-      .Message
-        %p.Message__content
-          おはよう！
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__name
-          masa
-        .MessageInfo__postTime
-          2020/08/12
-      .Message
-        %p.Message__content
-          おはよう！
+      =link_to edit_group_path(@group), class: "ChatHeader__editbtn" do
+        Edit
+
+  .MessageField
+    = render @messages
+
   .Form
-    %form.ChatForm
+    = form_with model: [@group, @message], html: {class: "ChatForm"}, local: true do |f|
       .ChatForm__content
-        %input.ChatForm__input{type: "text", placeholder: 'type a message'}
-        %label.ChatForm__inputImage
+        = f.text_field :content, class: 'ChatForm__input', placeholder: 'type a message'
+        = f.label :image, class: 'ChatForm__inputImage' do
           = icon('far', 'image', class: 'icon-image')
-          %input.Image{type: 'file'}
-      %input.ChatForm__submit{type: 'submit', value: 'Send'}
-    
-
-
+          = f.file_field :image, class: 'Image'
+      = f.submit 'SEND', class: 'ChatForm__submit'
