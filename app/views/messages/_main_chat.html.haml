@@ -1,13 +1,15 @@
 .ChatMain
   .ChatHeader
     .ChatHeader__group
-      test
+      = @group.name
       %ul.ChatHeader__groupname
         Member :
         %li.ChatHeader__menbername
-          ユーザー名
+        - @group.users.each do |user|
+          = user.name
     .ChatHeader__edit
-      = link_to 'Edit', "#", class: "ChatHeader__editbtn"
+      =link_to edit_group_path(@group), class: "ChatHeader__editbtn" do
+        Edit
 
   .MessageField
     = render @messages
@@ -20,5 +22,3 @@
           = icon('far', 'image', class: 'icon-image')
           = f.file_field :image, class: 'Image'
       = f.submit 'SEND', class: 'ChatForm__submit'
-
-
