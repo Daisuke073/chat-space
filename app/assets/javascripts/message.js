@@ -21,7 +21,9 @@ $(function(){
               </div>
             </div>
           </div>`
-    } else {
+          return html
+    } 
+    else {
       let html = 
       `<div class="ChatMessage">
         <div class="MessageBox">
