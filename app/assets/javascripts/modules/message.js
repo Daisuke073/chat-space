@@ -67,6 +67,8 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.ChatForm__submit').prop('disabled', false);
     });
   });
 });
+// .always
